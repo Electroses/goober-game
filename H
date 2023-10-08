@@ -1,0 +1,125 @@
+Let's make a game!
+	name: Hat Kid's Silly Clicker
+	by: Hat Kid 
+	desc: This is a revised version of a ChatGPT joke i made a while back! Now we are coding this for real!
+	created:10/7/23
+	version: 1.0
+CSS
+#game.on 
+{
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+}
+
+.buildingIconSize
+{
+	height:64;
+	width:64;
+}
+
+.thing-icon.shiny-icon
+{
+ width:128px;
+ height:128px;
+}
+
+  #game.filtersOn .thing.cantAfford.notOwned
+  {
+    filter:blur(3px);
+  }
+
+  #game
+  {
+    background:cornflowerblue;
+    font-family:"Times New Roman",Times,serif;
+    color:black;
+  }
+
+Settings 
+					background:https://file.garden/ZSIEvGTvf253N3So/HKSGC/dvsr.png
+	
+
+Buildings
+	*fist|fists
+		name:Temu Slave|Temu Slaves
+		desc:Make more Temu products. <//><b>Effect:</b><.>Produces 1 cash every 1 second.
+		on tick:yield 1 cash
+		cost:40 cash
+		icon class:buildingIconSize
+		icon:https://file.garden/ZSIEvGTvf253N3So/HKSGC/IlOveTmeu.png
+
+	*lamp|lamps
+		name:TikTok Memes
+		desc:Post these to get a bunch of ad revenue!<//><b>Effect:</b><.>Produces 5 cash every 1 second.
+		on tick:yield 5 + (0.1 * shoes)  cash
+		cost:150 cash
+		icon class:buildingIconSize
+		req:100 cash:earned
+	
+	*shoe|shoes 
+		name:Editor|Editors
+		desc:These guys help make your memes funnier! <b>Effect:</b><.>+0.1 base production increase to TikTok Memes
+		on tick:yield 4 cash
+		cost:250
+		req:200:earned
+		
+
+	*lino|linos
+		name:Generic SFM animator|Generic SFM animators
+		desc:This guy puts effort into making animations and publishes them on youtube for you! <//><b>Effect:</b><.>Produces 25 cash every 2 seconds.
+		on tick:yield 50 cash
+		cost:650 cash	
+		req:500 cash:earned
+		icon:https://file.garden/ZSIEvGTvf253N3So/HKSGC/lino.jpg
+
+	*bitcoin|bitcoins 
+		name:Bitcoin miner|Bitcoin miners
+		desc:Buy these to mine crypto! Just hope the stock market doesn't plummet... <//><b>Effect:</b><.>Produces 125 cash every 1 second.
+		on tick:yield 125 cash
+		cost:1000
+		icon class:buildingIconSize
+		icon:https://file.garden/ZSIEvGTvf253N3So/HKSGC/bit%20con.png
+		req:800 cash:earned
+Resources
+	*cash|cash
+		name:Cash|Cash
+		desc:That sweet green currency.	icon:https://file.garden/ZSIEvGTvf253N3So/HKSGC/Untitled.png%3Fex%3D6534a86d%26amp%3Bis%3D6522336d%26amp%3Bhm%3Dc947798e23d8113bdf2f9e502f43995ef441feac08be1afe9525ef3f1ba2b957%26amp%3B%3D%26amp%3Bwidth%3D640%26amp%3Bheight%3D480
+
+Buttons
+	*coinButton
+		on click:yield 1 cash
+		class:bigButton hasFlares	
+		icon:https://file.garden/ZSIEvGTvf253N3So/HKSGC/OMGADSKDH.png
+
+Upgrades 
+	*creatine
+	name:Creatine
+	desc:Give these to the Temu s̶l̶a̶v̶e̶s̶ workers to make them produce more!
+	passive:multiply yield of fists by 2
+	cost:150 cash
+	
+	*clickUpgrade
+	name:Spider-Man into the Spiderverse on DVD
+	desc:Buy a copy of Spider-Man into the Spiderverse on DVD.
+	passive:multiply yield of coinButton by 2
+	Cost:450 cash
+
+	Achievements 
+		*coinCollector
+		name: "Money can't buy you happiness."
+		desc: Well... Just buy what you like. Earned by getting 100 Cash.
+		req:100 cash:earned
+
+		*bigBux
+		name: Big bucks.
+		desc:cool. Capitalism at its finest. Earned by getting 1000 Cash
+		req:100 cash:earned
+
+Shinies
+	*luckCoin
+on click:yield (random(cash:ps*120,cash:ps*300)) cash
+	frequency:60
+	frequency variation:120
+	movement:growShrink pulse:1 bobVertical:0.25 bobHorizontal:25 anywhere
+	class:hasFlares
+	icon:https://file.garden/ZSIEvGTvf253N3So/HKSGC/AWildKurt.png
