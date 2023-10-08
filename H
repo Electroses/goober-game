@@ -1,3 +1,4 @@
+
 Let's make a game!
 	name: Hat Kid's Silly Clicker
 	by: Hat Kid 
